@@ -5,6 +5,7 @@ import Wrapper from "./components/theme/Wrapper";
 import Sidebar from "./components/theme/Sidebar";
 import PageWrapper from "./components/theme/PageWrapper";
 import YeniDuyuru from "./components/pages/YeniDuyuru";
+import NotFound from './components/pages/NotFound';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
           <PageWrapper>
             <Switch>
               <Route path="/yeniduyuru" component={YeniDuyuru} />
+              <Route component={NotFound} />
             </Switch>
           </PageWrapper>
         </Wrapper>
