@@ -8,21 +8,21 @@ import {
   Form,
   FormGroup,
   Label,
-  Input,
-  CustomInput,
-  Alert
+  Input
 } from "reactstrap";
+import DuyuruEklentileri from "../shared/DuyuruEklentileri";
 
 class YeniDuyuru extends Component {
   constructor() {
+    console.log('YeniDuyuru init...');
     super();
     this.state = {
       files: []
     };
-    this.handleFileChange = this.handleFileChange.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
-  handleFileChange(e) {
-    this.setState({ files: Array.from(e.target.files) });
+  handleFile(selectedFiles) {
+    this.setState({ files: selectedFiles });
   }
   render() {
     return (
@@ -34,34 +34,14 @@ class YeniDuyuru extends Component {
                 <CardTitle>Duyuru Formu</CardTitle>
                 <Form>
                   <FormGroup>
-                    <Label for="konu">Konu</Label>
-                    <Input type="text" name="konu" id="konu" />
+                    <Label for="konu">Konu:</Label>
+                    <Input type="text" name="konu" id="konu" autoComplete="off" />
                   </FormGroup>
                   <FormGroup>
                     <Label for="icerik">İçerik:</Label>
                     <Input type="textarea" name="text" id="icerik" />
                   </FormGroup>
-                  <FormGroup>
-                    <Label for="exampleCustomFileBrowser">
-                      Ekler:
-                    </Label>
-                    <CustomInput
-                      multiple="true"
-                      onChange={this.handleFileChange}
-                      type="file"
-                      id="exampleCustomFileBrowser"
-                      name="customFile"
-                      label="Seçiniz..."
-                    />
-                    {this.state.files.length > 0 &&
-                      this.state.files.map(function(item, index) {
-                        return (
-                          <div key={index}>
-                            <Alert color="primary">{item.name}</Alert>
-                          </div>
-                        );
-                      })}
-                  </FormGroup>
+                  <DuyuruEklentileri selectedFiles={this.handleFile}/>
                 </Form>
               </CardBody>
             </Card>

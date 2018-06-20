@@ -12,7 +12,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:dev": "set REACT_APP_STAGE=dev&react-scripts start",
+    "start:test": "set REACT_APP_STAGE=test&react-scripts start",
     "build": "react-scripts build",
+    "build:dev": "set REACT_APP_STAGE=dev&react-scripts build",
+    "build:test": "set REACT_APP_STAGE=test&react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

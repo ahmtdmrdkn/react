@@ -1,13 +1,35 @@
 import "./App.css";
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 import Wrapper from "./components/theme/Wrapper";
 import Sidebar from "./components/theme/Sidebar";
 import PageWrapper from "./components/theme/PageWrapper";
 import YeniDuyuru from "./components/pages/YeniDuyuru";
-import NotFound from './components/pages/NotFound';
+import YetkinizYok from './components/pages/YetkinizYok';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      yetkiler: []
+    };
+    this.checkRouteSafety = this.checkRouteSafety.bind(this);
+  }
+  componentDidMount() {
+    this.setState({
+      yetkiler: [1, 2]
+    });
+  }
+  checkRouteSafety(availableAuth) {
+    for (let i=0; i<this.state.yetkiler.length; i++)
+      if (this.state.yetkiler[i] === availableAuth)
+        return true;
+    return false;
+  }
   render() {
     return (
       <Router>
@@ -15,8 +37,9 @@ class App extends Component {
           <Sidebar />
           <PageWrapper>
             <Switch>
-              <Route path="/yeniduyuru" component={YeniDuyuru} />
-              <Route component={NotFound} />
+              <Route path="/yeniduyuru" render={() =>
+                this.checkRouteSafety(1) ? <YeniDuyuru /> : <YetkinizYok />
+              } />
             </Switch>
           </PageWrapper>
         </Wrapper>

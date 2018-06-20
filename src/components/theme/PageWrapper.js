@@ -15,7 +15,7 @@ class PageWrapper extends Component {
                 </button>
               </div>
               <a className="navbar-brand" href="#pablo">
-                <strong>Basın Duyuruları</strong>
+                <strong>BASIN DUYURULARI</strong>
               </a>
             </div>
           </div>

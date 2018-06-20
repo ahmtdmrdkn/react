@@ -1,3 +1,21 @@
 .sb-font-size {
-    font-size: 18px;
+  font-size: 18px;
+}
+
+.alert-info .btn-warning {
+  float: right;
+}
+
+.alert-info .btn-danger {
+  float: right;
+}
+
+.alert-info span {
+  line-height: 34px;
+}
+
+.alert-info > div:after {
+  clear: both;
+  content: "";
+  display: table;
 }
