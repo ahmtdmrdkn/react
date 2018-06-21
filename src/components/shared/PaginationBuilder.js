@@ -14,18 +14,55 @@ class PaginationBuilder extends Component {
       paginationNumbers: props.size
         ? this.buildPaginationArray(props.size)
         : [1],
-      activePage: 1
+      activePage: 1,
+      firstAndMaxResults: {
+        first: 0,
+        max: 10
+      }
     };
   }
 
   componentWillReceiveProps(props) {
-    /**SIFIR SIKINTI OLMALI */
-    this.setState({
-      paginationNumbers: props.size
-        ? this.buildPaginationArray(props.size)
-        : [1],
-      activePage: 1
-    });
+    const buildedPaginationArray = props.size
+      ? this.buildPaginationArray(props.size)
+      : [1];
+    const lastElementOfBuildedPaginationArray =
+      buildedPaginationArray[buildedPaginationArray.length - 1];
+    this.setState(
+      {
+        paginationNumbers: buildedPaginationArray,
+        activePage:
+          this.state.activePage <= lastElementOfBuildedPaginationArray
+            ? this.state.activePage
+            : 1
+      },
+      function() {
+        this.setState(
+          {
+            firstAndMaxResults: {
+              first:
+                this.state.activePage === 1
+                  ? 0
+                  : (this.state.activePage - 1) * 10,
+              max: 0
+            }
+          },
+          function() {
+            this.setState(
+              {
+                firstAndMaxResults: {
+                  first: this.state.firstAndMaxResults.first,
+                  max: this.state.firstAndMaxResults.first + 10
+                }
+              },
+              function() {
+                console.log(this.state.firstAndMaxResults);
+              }
+            );
+          }
+        );
+      }
+    );
   }
 
   buildPaginationArray(size) {
@@ -46,9 +83,37 @@ class PaginationBuilder extends Component {
     ];
     const { activePage } = { ...this.state };
     if (activePage + 1 <= lastElementOfArray) {
-      this.setState({
-        activePage: activePage + 1
-      });
+      this.setState(
+        {
+          activePage: activePage + 1
+        },
+        function() {
+          this.setState(
+            {
+              firstAndMaxResults: {
+                first:
+                  this.state.activePage === 1
+                    ? 0
+                    : (this.state.activePage - 1) * 10,
+                max: 0
+              }
+            },
+            function() {
+              this.setState(
+                {
+                  firstAndMaxResults: {
+                    first: this.state.firstAndMaxResults.first,
+                    max: this.state.firstAndMaxResults.first + 10
+                  }
+                },
+                function() {
+                  console.log(this.state.firstAndMaxResults);
+                }
+              );
+            }
+          );
+        }
+      );
     }
   }
 
@@ -56,16 +121,72 @@ class PaginationBuilder extends Component {
     const firstElementOfArray = this.state.paginationNumbers[0];
     const { activePage } = { ...this.state };
     if (activePage - 1 >= firstElementOfArray) {
-      this.setState({
-        activePage: activePage - 1
-      });
+      this.setState(
+        {
+          activePage: activePage - 1
+        },
+        function() {
+          this.setState(
+            {
+              firstAndMaxResults: {
+                first:
+                  this.state.activePage === 1
+                    ? 0
+                    : (this.state.activePage - 1) * 10,
+                max: 0
+              }
+            },
+            function() {
+              this.setState(
+                {
+                  firstAndMaxResults: {
+                    first: this.state.firstAndMaxResults.first,
+                    max: this.state.firstAndMaxResults.first + 10
+                  }
+                },
+                function() {
+                  console.log(this.state.firstAndMaxResults);
+                }
+              );
+            }
+          );
+        }
+      );
     }
   }
 
   clickedPage(page) {
-    this.setState({
-      activePage: page
-    });
+    this.setState(
+      {
+        activePage: page
+      },
+      function() {
+        this.setState(
+          {
+            firstAndMaxResults: {
+              first:
+                this.state.activePage === 1
+                  ? 0
+                  : (this.state.activePage - 1) * 10,
+              max: 0
+            }
+          },
+          function() {
+            this.setState(
+              {
+                firstAndMaxResults: {
+                  first: this.state.firstAndMaxResults.first,
+                  max: this.state.firstAndMaxResults.first + 10
+                }
+              },
+              function() {
+                console.log(this.state.firstAndMaxResults);
+              }
+            );
+          }
+        );
+      }
+    );
   }
 
   render() {
