@@ -5,8 +5,10 @@ class Taslaklar extends Component {
     constructor() {
         super();
         this.changeNumber = this.changeNumber.bind(this);
+        this.handlePagination = this.handlePagination.bind(this);
         this.state = {
-            number: 0
+            number: 0,
+            firstAndMax: {}
         };
     }
     changeNumber(e) {
@@ -14,11 +16,18 @@ class Taslaklar extends Component {
             number: Number(e.target.value)
         });
     }
+    handlePagination(firstAndMax) {
+        this.setState({
+            selectedPagination: firstAndMax
+        }, function() {
+            console.log(this.state.selectedPagination);
+        });
+    }
     render() {
         return (
             <div>
                 <input type="text" onChange={this.changeNumber} />
-                <PaginationBuilder size={this.state.number} />
+                <PaginationBuilder size={this.state.number} export={this.handlePagination} />
             </div>
         );
     }

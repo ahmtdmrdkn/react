@@ -48,17 +48,12 @@ class PaginationBuilder extends Component {
             }
           },
           function() {
-            this.setState(
-              {
-                firstAndMaxResults: {
-                  first: this.state.firstAndMaxResults.first,
-                  max: this.state.firstAndMaxResults.first + 10
-                }
-              },
-              function() {
-                console.log(this.state.firstAndMaxResults);
+            this.setState({
+              firstAndMaxResults: {
+                first: this.state.firstAndMaxResults.first,
+                max: this.state.firstAndMaxResults.first + 10
               }
-            );
+            });
           }
         );
       }
@@ -107,7 +102,7 @@ class PaginationBuilder extends Component {
                   }
                 },
                 function() {
-                  console.log(this.state.firstAndMaxResults);
+                  this.props.export(this.state.firstAndMaxResults);
                 }
               );
             }
@@ -145,7 +140,7 @@ class PaginationBuilder extends Component {
                   }
                 },
                 function() {
-                  console.log(this.state.firstAndMaxResults);
+                  this.props.export(this.state.firstAndMaxResults);
                 }
               );
             }
@@ -180,7 +175,7 @@ class PaginationBuilder extends Component {
                 }
               },
               function() {
-                console.log(this.state.firstAndMaxResults);
+                this.props.export(this.state.firstAndMaxResults);
               }
             );
           }
@@ -216,7 +211,8 @@ class PaginationBuilder extends Component {
 }
 
 PaginationBuilder.propTypes = {
-  size: PropTypes.number
+  size: PropTypes.number,
+  export: PropTypes.func
 };
 
 export default PaginationBuilder;
