@@ -10,6 +10,7 @@ import Sidebar from "./components/theme/Sidebar";
 import PageWrapper from "./components/theme/PageWrapper";
 import YeniDuyuru from "./components/pages/YeniDuyuru";
 import YetkinizYok from './components/pages/YetkinizYok';
+import Taslaklar from './components/pages/Taslaklar';
 
 class App extends Component {
   constructor() {
@@ -24,9 +25,9 @@ class App extends Component {
       yetkiler: [1, 2]
     });
   }
-  checkRouteSafety(availableAuth) {
+  checkRouteSafety(availableAuthForThisRoute) {
     for (let i=0; i<this.state.yetkiler.length; i++)
-      if (this.state.yetkiler[i] === availableAuth)
+      if (this.state.yetkiler[i] === availableAuthForThisRoute)
         return true;
     return false;
   }
@@ -40,6 +41,7 @@ class App extends Component {
               <Route path="/yeniduyuru" render={() =>
                 this.checkRouteSafety(1) ? <YeniDuyuru /> : <YetkinizYok />
               } />
+              <Route path="/taslaklar" component={Taslaklar} />
             </Switch>
           </PageWrapper>
         </Wrapper>
