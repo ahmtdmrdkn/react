@@ -58,37 +58,36 @@ $(document).ready(function() {
     });
   });
 });
-$(document).on("click", ".navbar-toggle", function() {
-  $toggle = $(this);
-  if (paperDashboard.misc.navbar_menu_visible == 1) {
-    document.getElementById('mainPanel').classList.remove('blur-me');
-    $("html").removeClass("nav-open");
-    paperDashboard.misc.navbar_menu_visible = 0;
-    setTimeout(function() {
-      $toggle.removeClass("toggled");
-      $("#bodyClick").remove();
-    }, 550);
-  } else {
-    setTimeout(function() {
-      $toggle.addClass("toggled");
-      document.getElementById('mainPanel').classList.add('blur-me');
-    }, 580);
-    div = '<div id="bodyClick"></div>';
-    $(div)
-      .appendTo("body")
-      .click(function() {
-        $("html").removeClass("nav-open");
-        paperDashboard.misc.navbar_menu_visible = 0;
-        setTimeout(function() {
-          $toggle.removeClass("toggled");
-          $("#bodyClick").remove();
-        }, 550);
-        document.getElementById('mainPanel').classList.remove('blur-me');
-      });
-    $("html").addClass("nav-open");
-    paperDashboard.misc.navbar_menu_visible = 1;
-  }
-});
+// $(document).on("click", ".navbar-toggle", function() {
+//   $toggle = $(this);
+//   if (paperDashboard.misc.navbar_menu_visible == 1) {
+//     $("html").removeClass("nav-open");
+//     paperDashboard.misc.navbar_menu_visible = 0;
+//     setTimeout(function() {
+//       $toggle.removeClass("toggled");
+//       $("#bodyClick").remove();
+//     }, 550);
+//   } else {
+//     setTimeout(function() {
+//       $toggle.addClass("toggled");
+//       // document.getElementById('mainPanel').classList.add('blur-me');
+//     }, 580);
+//     div = '<div id="bodyClick"></div>';
+//     $(div)
+//       .appendTo("body")
+//       .click(function() {
+//         $("html").removeClass("nav-open");
+//         paperDashboard.misc.navbar_menu_visible = 0;
+//         setTimeout(function() {
+//           $toggle.removeClass("toggled");
+//           $("#bodyClick").remove();
+//         }, 550);
+//         // document.getElementById('mainPanel').classList.remove('blur-me');
+//       });
+//     $("html").addClass("nav-open");
+//     paperDashboard.misc.navbar_menu_visible = 1;
+//   }
+// });
 $(window).resize(function() {
   seq = seq2 = 0;
   if ($(".full-screen-map").length == 0 && $(".bd-docs").length == 0) {

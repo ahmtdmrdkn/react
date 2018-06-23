@@ -39,6 +39,7 @@ class KarsilamaEkrani extends Component {
         <Row>
           <Col>
             <AnaMenuItem
+              navigate="/ylistesi"
               label="Yemek Listesi"
               iconpath="/assets/img/icons/pack1/yemek_listesi_renkli.png"
             />

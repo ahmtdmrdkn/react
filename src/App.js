@@ -14,6 +14,7 @@ import YetkinizYok from "./components/pages/YetkinizYok";
 import Taslaklar from "./components/pages/Taslaklar";
 import KarsilamaEkrani from "./components/pages/KarsilamaEkrani";
 import GorevliYoneticiListesi from "./components/pages/GorevliYoneticiListesi";
+import YemekListesi from "./components/pages/YemekListesi";
 
 class App extends Component {
   constructor() {
@@ -49,6 +50,7 @@ class App extends Component {
                 />
                 <Route path="/taslaklar" component={Taslaklar} />
                 <Route path="/gylistesi" component={GorevliYoneticiListesi} />
+                <Route path="/ylistesi" component={YemekListesi} />
                 <Route path="/karsilamaekrani" component={KarsilamaEkrani} />
                 <Redirect to="karsilamaekrani" />
               </Switch>
