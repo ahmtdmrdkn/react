@@ -4,8 +4,6 @@ import {
   CardBody,
   CardTitle,
   Alert,
-  ListGroup,
-  ListGroupItem,
   Row,
   Col
 } from "reactstrap";
@@ -37,53 +35,51 @@ class GorevliYoneticiListesi extends Component {
             <Card>
               <CardBody>
                 <CardTitle>Görevden Ayrılanlar</CardTitle>
-              </CardBody>
-            </Card>
-            {gorevdenAyrilanlar.length > 0 ? (
-              gorevdenAyrilanlar.map(function(item, index) {
-                return (
-                  <React.Fragment key={index}>
-                    <ListGroup>
-                      <ListGroupItem>
+                {gorevdenAyrilanlar.length > 0 ? <hr /> : <div></div>}
+                {gorevdenAyrilanlar.length > 0 ? (
+                  gorevdenAyrilanlar.map(function(item, index) {
+                    return (
+                      <React.Fragment key={index}>
                         <p>Ad Soyad: {item.adSoyad}</p>
                         <p>Müdürlük: {item.adSoyad}</p>
                         <p>Görev Yeri: {item.adSoyad}</p>
-                      </ListGroupItem>
-                    </ListGroup>
-                    {index + 1 < gorevdenAyrilanlar.length ? <hr /> : <br />}
-                  </React.Fragment>
-                );
-              }, this)
-            ) : (
-              <Alert color="primary">Listelenecek veri bulunamadı.</Alert>
-            )}
+                        {index + 1 < gorevdenAyrilanlar.length ? (
+                          <hr />
+                        ) : (
+                          <br />
+                        )}
+                      </React.Fragment>
+                    );
+                  }, this)
+                ) : (
+                  <Alert color="primary">Listelenecek veri bulunamadı.</Alert>
+                )}
+              </CardBody>
+            </Card>
           </Col>
         </Row>
         <Row>
           <Col>
             <Card>
               <CardBody>
-                <CardTitle>Vekalet Edenler</CardTitle>
-              </CardBody>
-            </Card>
-            {vekaletenDuranlar.length > 0 ? (
-              vekaletenDuranlar.map(function(item, index) {
-                return (
-                  <React.Fragment key={index}>
-                    <ListGroup>
-                      <ListGroupItem>
+                <CardTitle>Vekaleten Duranlar</CardTitle>
+                <hr />
+                {vekaletenDuranlar.length > 0 ? (
+                  vekaletenDuranlar.map(function(item, index) {
+                    return (
+                      <React.Fragment key={index}>
                         <p>Ad Soyad: {item.adSoyad}</p>
                         <p>Müdürlük: {item.adSoyad}</p>
                         <p>Görev Yeri: {item.adSoyad}</p>
-                      </ListGroupItem>
-                    </ListGroup>
-                    {index + 1 < vekaletenDuranlar.length ? <hr /> : <br />}
-                  </React.Fragment>
-                );
-              }, this)
-            ) : (
-              <Alert color="primary">Listelenecek veri bulunamadı.</Alert>
-            )}
+                        {index + 1 < vekaletenDuranlar.length ? <hr /> : <br />}
+                      </React.Fragment>
+                    );
+                  }, this)
+                ) : (
+                  <Alert color="primary">Listelenecek veri bulunamadı.</Alert>
+                )}
+              </CardBody>
+            </Card>
           </Col>
         </Row>
       </React.Fragment>

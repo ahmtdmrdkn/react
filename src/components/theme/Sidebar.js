@@ -1,11 +1,22 @@
 import React, { Component } from "react";
 import NavBar from "./NavBar";
 import NavLink from "./NavLink";
+import GuvenliCikisModal from "../shared/GuvenliCikisModal";
 
 class Sidebar extends Component {
   constructor() {
     super();
+    this.state = {
+      guvenlicikis: false
+    };
     this.closeSideBarIfNecessary = this.closeSideBarIfNecessary.bind(this);
+    this.guvenlicikis = this.guvenlicikis.bind(this);
+  }
+
+  guvenlicikis() {
+    this.setState({
+      guvenlicikis: true
+    });
   }
 
   closeSideBarIfNecessary() {
@@ -34,11 +45,36 @@ class Sidebar extends Component {
           </a>
         </div>
         <NavBar>
-          <NavLink to="/karsilamaekrani" label="Ana Menü" onClick={this.closeSideBarIfNecessary} />
-          <NavLink to="/yeniduyuru" label="Yeni Duyuru" onClick={this.closeSideBarIfNecessary} />
-          <NavLink to="/taslaklar" label="Taslaklar" onClick={this.closeSideBarIfNecessary} />
-          <NavLink to="/onaybekleyenler" label="Onay Bekleyenler" onClick={this.closeSideBarIfNecessary} />
-          <NavLink to="/gonderilenler" label="Gönderilenler" onClick={this.closeSideBarIfNecessary} />
+          <NavLink
+            to="/karsilamaekrani"
+            label="Ana Menü"
+            onClick={this.closeSideBarIfNecessary}
+          />
+          <NavLink
+            to="/yeniduyuru"
+            label="Yeni Duyuru"
+            onClick={this.closeSideBarIfNecessary}
+          />
+          <NavLink
+            to="/taslaklar"
+            label="Taslaklar"
+            onClick={this.closeSideBarIfNecessary}
+          />
+          <NavLink
+            to="/onaybekleyenler"
+            label="Onay Bekleyenler"
+            onClick={this.closeSideBarIfNecessary}
+          />
+          <NavLink
+            to="/gonderilenler"
+            label="Gönderilenler"
+            onClick={this.closeSideBarIfNecessary}
+          />
+          <li>
+            <a label="Yeni Duyuru" onClick={this.guvenlicikis}>
+              <p class="sb-font-size">Güvenli Çıkış</p>
+            </a>
+          </li>
           <li>
             <a
               data-toggle="collapse"
@@ -67,6 +103,7 @@ class Sidebar extends Component {
             </div>
           </li>
         </NavBar>
+        <GuvenliCikisModal toggle={this.state.guvenlicikis} />
       </div>
     );
   }

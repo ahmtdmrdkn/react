@@ -15,8 +15,8 @@ class PageWrapper extends Component {
                 </button>
               </div>
               <a className="navbar-brand">
-                {/* <img src="/assets/img/facebook.png" alt="" width="100px" /> */}
-                <strong style={{fontSize:"20px"}}>HAREKETLİ OFİS PROJESİ</strong>
+                {/* <img src="/assets/img/logo/sample_logo.png" alt="" width="100px" height="20px" /> */}
+                <strong style={{fontSize:"20px"}}>Hareketli Ofis Projesi</strong>
               </a>
             </div>
             <button
