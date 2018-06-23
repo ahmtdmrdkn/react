@@ -9,12 +9,14 @@ class KarsilamaEkrani extends Component {
         <Row>
           <Col>
             <AnaMenuItem
+              navigate="/yeniduyuru"
               label="Başkanlık Onayı"
               iconpath="/assets/img/icons/pack1/baskanlik_onayi_renkli.png"
             />
           </Col>
           <Col>
             <AnaMenuItem
+              navigate="/gylistesi"
               label="Görevli Yönetici Listesi"
               iconpath="/assets/img/icons/pack1/gorevli_yonetici_listesi_renkli.png"
             />
@@ -55,8 +57,7 @@ class KarsilamaEkrani extends Component {
               iconpath="/assets/img/icons/pack1/canli_yayin_renkli.png"
             />
           </Col>
-          <Col>
-          </Col>
+          <Col />
         </Row>
       </React.Fragment>
     );

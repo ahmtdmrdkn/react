@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Card, CardBody } from "reactstrap";
+import { withRouter } from "react-router";
 
 class AnaMenuItem extends Component {
   render() {
     return (
-      <Card style={{cursor: 'pointer', textAlign: 'center'}}>
+      <Card style={{cursor: 'pointer', textAlign: 'center'}} onClick={() => this.props.history.push(this.props.navigate)}>
         <CardBody style={{minHeight: '139px'}}>
           <div>
             <img
@@ -26,4 +27,4 @@ AnaMenuItem.propTypes = {
   label: PropTypes.string
 };
 
-export default AnaMenuItem;
+export default withRouter(AnaMenuItem);

@@ -13,6 +13,7 @@ import YeniDuyuru from "./components/pages/YeniDuyuru";
 import YetkinizYok from './components/pages/YetkinizYok';
 import Taslaklar from './components/pages/Taslaklar';
 import KarsilamaEkrani from "./components/pages/KarsilamaEkrani";
+import GorevliYoneticiListesi from "./components/pages/GorevliYoneticiListesi";
 
 class App extends Component {
   constructor() {
@@ -44,6 +45,7 @@ class App extends Component {
                 this.checkRouteSafety(1) ? <YeniDuyuru /> : <YetkinizYok />
               } />
               <Route path="/taslaklar" component={Taslaklar} />
+              <Route path="/gylistesi" component={GorevliYoneticiListesi} />
               <Route path="/karsilamaekrani" component={KarsilamaEkrani} />
               <Redirect to="karsilamaekrani" />
             </Switch>
