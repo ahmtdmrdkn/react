@@ -14,7 +14,6 @@ import DuyuruEklentileri from "../shared/DuyuruEklentileri";
 
 class YeniDuyuru extends Component {
   constructor() {
-    console.log('YeniDuyuru init...');
     super();
     this.state = {
       files: []

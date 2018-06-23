@@ -82,6 +82,7 @@ $(document).on('click', '.navbar-toggle', function() {
   $toggle = $(this);
 
   if (paperDashboard.misc.navbar_menu_visible == 1) {
+    console.log('girdi');
     $('html').removeClass('nav-open');
     paperDashboard.misc.navbar_menu_visible = 0;
     setTimeout(function() {

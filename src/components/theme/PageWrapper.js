@@ -7,17 +7,27 @@ class PageWrapper extends Component {
         <nav className="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
           <div className="container-fluid">
             <div className="navbar-wrapper">
-              <div className="navbar-toggle">
+              <div id="navbartoggler" className="navbar-toggle">
                 <button type="button" className="navbar-toggler">
                   <span className="navbar-toggler-bar bar1" />
                   <span className="navbar-toggler-bar bar2" />
                   <span className="navbar-toggler-bar bar3" />
                 </button>
               </div>
-              <a className="navbar-brand" href="#pablo">
-                <strong>BASIN DUYURULARI</strong>
+              <a className="navbar-brand">
+                {/* <img src="/assets/img/facebook.png" alt="" width="100px" /> */}
+                <strong style={{fontSize:"20px"}}>HAREKETLİ OFİS PROJESİ</strong>
               </a>
             </div>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navigation"
+              aria-controls="navigation-index"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            />
           </div>
         </nav>
         <div className="content">{this.props.children}</div>

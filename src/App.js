@@ -3,7 +3,8 @@ import React, { Component } from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 import Wrapper from "./components/theme/Wrapper";
 import Sidebar from "./components/theme/Sidebar";
@@ -11,6 +12,7 @@ import PageWrapper from "./components/theme/PageWrapper";
 import YeniDuyuru from "./components/pages/YeniDuyuru";
 import YetkinizYok from './components/pages/YetkinizYok';
 import Taslaklar from './components/pages/Taslaklar';
+import KarsilamaEkrani from "./components/pages/KarsilamaEkrani";
 
 class App extends Component {
   constructor() {
@@ -42,6 +44,8 @@ class App extends Component {
                 this.checkRouteSafety(1) ? <YeniDuyuru /> : <YetkinizYok />
               } />
               <Route path="/taslaklar" component={Taslaklar} />
+              <Route path="/karsilamaekrani" component={KarsilamaEkrani} />
+              <Redirect to="karsilamaekrani" />
             </Switch>
           </PageWrapper>
         </Wrapper>
