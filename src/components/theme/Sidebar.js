@@ -6,16 +6,24 @@ import GuvenliCikisModal from "../shared/GuvenliCikisModal";
 class Sidebar extends Component {
   constructor() {
     super();
-    this.state = {
-      guvenlicikis: false
-    };
     this.closeSideBarIfNecessary = this.closeSideBarIfNecessary.bind(this);
+    this.handleModalState = this.handleModalState.bind(this);
     this.guvenlicikis = this.guvenlicikis.bind(this);
+    this.state = {
+      guvenliCikisModalState: false
+    };
   }
 
   guvenlicikis() {
     this.setState({
-      guvenlicikis: true
+      guvenliCikisModalState: true
+    });
+  }
+
+  handleModalState(callbackState) {
+    console.log(callbackState);
+    this.setState({
+      guvenliCikisModalState: callbackState
     });
   }
 
@@ -31,80 +39,40 @@ class Sidebar extends Component {
 
   render() {
     return (
-      <div className="sidebar" data-color="white" data-active-color="info">
-        <div className="logo" style={{ textAlign: "center" }}>
-          <a
-            href="http://www.creative-tim.com"
-            className="simple-text logo-normal"
-          >
-            <img
-              height="28px"
-              src="http://www.tcmb.gov.tr/wps/wcm/connect/262f6943-1f47-44b8-9471-a488940f31d4/Logo.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE-262f6943-1f47-44b8-9471-a488940f31d4-m2sNI2C"
-              alt=""
-            />
-          </a>
-        </div>
-        <NavBar>
-          <NavLink
-            to="/karsilamaekrani"
-            label="Ana Menü"
-            onClick={this.closeSideBarIfNecessary}
-          />
-          <NavLink
-            to="/yeniduyuru"
-            label="Yeni Duyuru"
-            onClick={this.closeSideBarIfNecessary}
-          />
-          <NavLink
-            to="/taslaklar"
-            label="Taslaklar"
-            onClick={this.closeSideBarIfNecessary}
-          />
-          <NavLink
-            to="/onaybekleyenler"
-            label="Onay Bekleyenler"
-            onClick={this.closeSideBarIfNecessary}
-          />
-          <NavLink
-            to="/gonderilenler"
-            label="Gönderilenler"
-            onClick={this.closeSideBarIfNecessary}
-          />
-          <li>
-            <a label="Yeni Duyuru" onClick={this.guvenlicikis}>
-              <p class="sb-font-size">Güvenli Çıkış</p>
-            </a>
-          </li>
-          <li>
+      <React.Fragment>
+        <div className="sidebar" data-color="white" data-active-color="info">
+          <div className="logo" style={{ textAlign: "center" }}>
             <a
-              data-toggle="collapse"
-              href="#pagesExamples"
-              className="collapsed"
-              aria-expanded="false"
+              href="http://www.creative-tim.com"
+              className="simple-text logo-normal"
             >
-              <p className="sb-font-size">
-                Pages
-                <b className="caret" />
-              </p>
+              <img
+                height="28px"
+                src="http://www.tcmb.gov.tr/wps/wcm/connect/262f6943-1f47-44b8-9471-a488940f31d4/Logo.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE-262f6943-1f47-44b8-9471-a488940f31d4-m2sNI2C"
+                alt=""
+              />
             </a>
-            <div className="collapse" id="pagesExamples">
-              <ul className="nav">
-                <li>
-                  <a href="../examples/pages/timeline.html">
-                    <span className="sidebar-normal"> Timeline </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="../examples/pages/login.html">
-                    <span className="sidebar-normal"> Login </span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </NavBar>
-        <GuvenliCikisModal toggle={this.state.guvenlicikis} />
-      </div>
+          </div>
+          <NavBar>
+            <NavLink to="/karsilamaekrani" label="Ana Menü" />
+            <NavLink to="/yeniduyuru" label="Yeni Duyuru" />
+            <NavLink to="/taslaklar" label="Taslaklar" />
+            <NavLink to="/onaybekleyenler" label="Onay Bekleyenler" />
+            <NavLink to="/gonderilenler" label="Gönderilenler" />
+            <li>
+              <a onClick={this.guvenlicikis}>
+                <p className="sb-font-size">Güvenli Çıkış</p>
+              </a>
+            </li>
+          </NavBar>
+        </div>
+        <div>
+          <GuvenliCikisModal
+            isOpen={this.state.guvenliCikisModalState}
+            state={this.handleModalState}
+          />
+        </div>
+      </React.Fragment>
     );
   }
 }

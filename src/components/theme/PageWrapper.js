@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router";
 
 class PageWrapper extends Component {
   render() {
     return (
-      <div className="main-panel">
+      <div id="mainPanel" className="main-panel">
         <nav className="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
           <div className="container-fluid">
             <div className="navbar-wrapper">
@@ -14,7 +15,7 @@ class PageWrapper extends Component {
                   <span className="navbar-toggler-bar bar3" />
                 </button>
               </div>
-              <a className="navbar-brand">
+              <a className="navbar-brand" onClick={() => this.props.history.push("/karsilamaekrani")}>
                 {/* <img src="/assets/img/logo/sample_logo.png" alt="" width="100px" height="20px" /> */}
                 <strong style={{fontSize:"20px"}}>Hareketli Ofis Projesi</strong>
               </a>
@@ -36,4 +37,4 @@ class PageWrapper extends Component {
   }
 }
 
-export default PageWrapper;
+export default withRouter(PageWrapper);
