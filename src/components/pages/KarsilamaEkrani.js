@@ -25,13 +25,15 @@ class KarsilamaEkrani extends Component {
         <Row>
           <Col>
             <AnaMenuItem
+              navigate="/telefonrehberi"
               label="Telefon Rehberi"
               iconpath="/assets/img/icons/pack1/telefon_rehberi_renkli.png"
             />
           </Col>
           <Col>
             <AnaMenuItem
-              label="Turnike Verileri"
+              navigate="/izinturnike"
+              label="İzin / Turnike Verileri"
               iconpath="/assets/img/icons/pack1/giris_cikis_renkli.png"
             />
           </Col>

@@ -15,6 +15,9 @@ import Taslaklar from "./components/pages/Taslaklar";
 import KarsilamaEkrani from "./components/pages/KarsilamaEkrani";
 import GorevliYoneticiListesi from "./components/pages/GorevliYoneticiListesi";
 import YemekListesi from "./components/pages/YemekListesi";
+import Gonderilenler from "./components/pages/Gonderilenler";
+import TelefonRehberi from "./components/pages/TelefonRehberi";
+import IzinTurnike from "./components/pages/IzinTurnike";
 
 class App extends Component {
   constructor() {
@@ -51,7 +54,10 @@ class App extends Component {
                 <Route path="/taslaklar" component={Taslaklar} />
                 <Route path="/gylistesi" component={GorevliYoneticiListesi} />
                 <Route path="/ylistesi" component={YemekListesi} />
+                <Route path="/gonderilenler" component={Gonderilenler} />
                 <Route path="/karsilamaekrani" component={KarsilamaEkrani} />
+                <Route path="/telefonrehberi" component={TelefonRehberi} />
+                <Route path="/izinturnike" component={IzinTurnike} />
                 <Redirect to="karsilamaekrani" />
               </Switch>
             </PageWrapper>

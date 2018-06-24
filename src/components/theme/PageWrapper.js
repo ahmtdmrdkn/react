@@ -45,7 +45,7 @@ class PageWrapper extends Component {
                 onClick={() => this.props.history.push("/karsilamaekrani")}
               >
                 {/* <img src="/assets/img/logo/sample_logo.png" alt="" width="100px" height="20px" /> */}
-                <strong style={{ fontSize: "20px" }}>
+                <strong style={{ fontSize: "20px", cursor: "pointer" }}>
                   Hareketli Ofis Projesi
                 </strong>
               </a>

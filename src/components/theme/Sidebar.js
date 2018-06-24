@@ -73,6 +73,16 @@ class Sidebar extends Component {
               onClick={this.closeSideBarIfNecessary}
             />
             <NavLink
+              to="/telefonrehberi"
+              label="Telefon Rehberi"
+              onClick={this.closeSideBarIfNecessary}
+            />
+            <NavLink
+              to="/izinturnike"
+              label="İzin / Turnike Verileri"
+              onClick={this.closeSideBarIfNecessary}
+            />
+            <NavLink
               to="/onaybekleyenler"
               label="Onay Bekleyenler"
               onClick={this.closeSideBarIfNecessary}
