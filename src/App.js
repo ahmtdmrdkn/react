@@ -12,7 +12,7 @@ import PageWrapper from "./components/theme/PageWrapper";
 import YeniDuyuru from "./components/pages/YeniDuyuru";
 import YetkinizYok from "./components/pages/YetkinizYok";
 import Taslaklar from "./components/pages/Taslaklar";
-import KarsilamaEkrani from "./components/pages/KarsilamaEkrani";
+import AnaMenu from "./components/pages/AnaMenu";
 import GorevliYoneticiListesi from "./components/pages/GorevliYoneticiListesi";
 import YemekListesi from "./components/pages/YemekListesi";
 import Gonderilenler from "./components/pages/Gonderilenler";
@@ -52,15 +52,15 @@ class App extends Component {
                     this.checkRouteSafety(1) ? <YeniDuyuru /> : <YetkinizYok />
                   }
                 />
+                <Route path="/anamenu" component={AnaMenu} />
                 <Route path="/taslaklar" component={Taslaklar} />
                 <Route path="/gylistesi" component={GorevliYoneticiListesi} />
                 <Route path="/ylistesi" component={YemekListesi} />
                 <Route path="/gonderilenler" component={Gonderilenler} />
-                <Route path="/karsilamaekrani" component={KarsilamaEkrani} />
                 <Route path="/telefonrehberi" component={TelefonRehberi} />
                 <Route path="/izinturnike" component={IzinTurnike} />
                 <Route path="/obekleyenler" component={OnayBekleyenler} />
-                <Redirect to="karsilamaekrani" />
+                <Redirect to="/anamenu" />
               </Switch>
             </PageWrapper>
           </Wrapper>

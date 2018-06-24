@@ -53,7 +53,7 @@ class Sidebar extends Component {
           </div>
           <NavBar>
             <NavLink
-              to="/karsilamaekrani"
+              to="/anamenu"
               label="Ana Menü"
               onClick={this.closeSideBarIfNecessary}
             />
