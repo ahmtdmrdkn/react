@@ -18,22 +18,14 @@ class TelefonRehberi extends Component {
     super();
     this.ara = this.ara.bind(this);
     this.handleAramaKriteri = this.handleAramaKriteri.bind(this);
+    this.handleOnKeyPressAramaKriteri = this.handleOnKeyPressAramaKriteri.bind(this);
     this.state = {
       aramaKriteri: "",
       rehber: []
     };
   }
 
-  componentDidMount() {
-    axios
-      .get("http://www.mocky.io/v2/5b2eed2e2f000057006a293b")
-      .then(res => {
-        this.setState({
-          rehber: res
-        });
-      })
-      .catch(err => {});
-  }
+  componentDidMount() {}
 
   handleAramaKriteri(e) {
     this.setState({
@@ -41,17 +33,30 @@ class TelefonRehberi extends Component {
     });
   }
 
-  ara() {
-    const { rehber, aramaKriteri } = { ...this.state };
-    if (rehber.length > 0) {
-      let tempArray = rehber;
-      this.setState({
-        rehber: tempArray.filter(item => item.ad.indexOf(aramaKriteri) >= 0)
-      });
+  handleOnKeyPressAramaKriteri(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      this.ara();
     }
   }
 
+  ara() {
+    axios
+      .post("http://localhost:8080/SpringBestPractices/autocomplete/search", {
+        term: this.state.aramaKriteri
+      })
+      .then(res => {
+        this.setState({
+          rehber: res
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
   render() {
+    const { rehber } = { ...this.state };
     return (
       <Row>
         <Col>
@@ -61,16 +66,22 @@ class TelefonRehberi extends Component {
               <Form>
                 <FormGroup>
                   <Label for="isim" />
-                  <Input id="isim" autoComplete="off" onChange={this.handleAramaKriteri} />
+                  <Input
+                    id="isim"
+                    autoComplete="off"
+                    onChange={this.handleAramaKriteri}
+                    onKeyPress={this.handleOnKeyPressAramaKriteri}
+                  />
                 </FormGroup>
               </Form>
               <Button outline color="info" onClick={this.ara}>
                 <i className="fa fa-search" />&nbsp;Ara
               </Button>
               {
-                this.state.rehber.length > 0 && this.state.rehber.map(function(item, index) {
-                  return (  
-                    <p key={index}>{item.ad}</p>
+                rehber.length > 0 &&
+                rehber.map(function(item, index) {
+                  return (
+                    <p key={index}>{item}</p>
                   );
                 }, this)
               }

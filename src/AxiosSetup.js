@@ -1,10 +1,21 @@
 import axios from "axios";
 
 export default {
-  setupInterceptor() {
+  setup() {
+    // const axiosBaseURL =
+    //   process.env.REACT_APP_STAGE === "prod"
+    //     ? "KIMBSNDPROD"
+    //     : process.env.REACT_APP_STAGE === "test"
+    //       ? "KIMBSNDTEST"
+    //       : "KIMBSNDDEV";
+    // axios.defaults.baseURL = axiosBaseURL;
+
+    axios.defaults.timeout = 15000;
+
     axios.interceptors.request.use(function(config) {
       return config;
     });
+
     axios.interceptors.response.use(
       response => {
         if (response.headers["content-type"].indexOf("application/json") >= 0) {
@@ -25,5 +36,6 @@ export default {
         return Promise.reject(err);
       }
     );
+
   }
 };

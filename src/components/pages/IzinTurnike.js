@@ -14,10 +14,7 @@ import {
 import moment from "moment";
 
 class IzinTurnike extends Component {
-  constructor() {
-    super();
-    console.log(moment().year());
-  }
+
   render() {
     const yearsFromNow = [];
     const startYear = 1999;
