@@ -4936,6 +4936,9 @@ License - nucleoapp.com/license/
   opacity: 1;
 }
 
+.sidebar[data-active-color="info"] .nav li.active {
+  background: #51bcda;
+}
 .sidebar[data-active-color="info"] .nav li.active>a,
 .sidebar[data-active-color="info"] .nav li.active>a i,
 .sidebar[data-active-color="info"] .nav li.active>a[data-toggle="collapse"],
@@ -4948,7 +4951,8 @@ License - nucleoapp.com/license/
 .off-canvas-sidebar[data-active-color="info"] .nav li.active>a[data-toggle="collapse"] i,
 .off-canvas-sidebar[data-active-color="info"] .nav li.active>a[data-toggle="collapse"]~div>ul>li.active .sidebar-mini-icon,
 .off-canvas-sidebar[data-active-color="info"] .nav li.active>a[data-toggle="collapse"]~div>ul>li.active>a {
-  color: #51bcda;
+  /* color: #51bcda; */
+  color: white;
   opacity: 1;
 }
 
