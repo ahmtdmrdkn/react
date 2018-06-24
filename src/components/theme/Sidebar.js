@@ -83,7 +83,7 @@ class Sidebar extends Component {
               onClick={this.closeSideBarIfNecessary}
             />
             <NavLink
-              to="/onaybekleyenler"
+              to="/obekleyenler"
               label="Onay Bekleyenler"
               onClick={this.closeSideBarIfNecessary}
             />
@@ -92,31 +92,6 @@ class Sidebar extends Component {
               label="Gönderilenler"
               onClick={this.closeSideBarIfNecessary}
             />
-            <li>
-              <a onClick={this.guvenlicikis}>
-                <p className="sb-font-size">Güvenli Çıkış</p>
-              </a>
-            </li>
-            <li>
-              <a onClick={this.guvenlicikis}>
-                <p className="sb-font-size">Güvenli Çıkış</p>
-              </a>
-            </li>
-            <li>
-              <a onClick={this.guvenlicikis}>
-                <p className="sb-font-size">Güvenli Çıkış</p>
-              </a>
-            </li>
-            <li>
-              <a onClick={this.guvenlicikis}>
-                <p className="sb-font-size">Güvenli Çıkış</p>
-              </a>
-            </li>
-            <li>
-              <a onClick={this.guvenlicikis}>
-                <p className="sb-font-size">Güvenli Çıkış</p>
-              </a>
-            </li>
             <li>
               <a onClick={this.guvenlicikis}>
                 <p className="sb-font-size">Güvenli Çıkış</p>

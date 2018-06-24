@@ -18,6 +18,7 @@ import YemekListesi from "./components/pages/YemekListesi";
 import Gonderilenler from "./components/pages/Gonderilenler";
 import TelefonRehberi from "./components/pages/TelefonRehberi";
 import IzinTurnike from "./components/pages/IzinTurnike";
+import OnayBekleyenler from "./components/pages/OnayBekleyenler";
 
 class App extends Component {
   constructor() {
@@ -58,6 +59,7 @@ class App extends Component {
                 <Route path="/karsilamaekrani" component={KarsilamaEkrani} />
                 <Route path="/telefonrehberi" component={TelefonRehberi} />
                 <Route path="/izinturnike" component={IzinTurnike} />
+                <Route path="/obekleyenler" component={OnayBekleyenler} />
                 <Redirect to="karsilamaekrani" />
               </Switch>
             </PageWrapper>
