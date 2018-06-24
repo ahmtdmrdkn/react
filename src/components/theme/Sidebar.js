@@ -97,6 +97,31 @@ class Sidebar extends Component {
                 <p className="sb-font-size">Güvenli Çıkış</p>
               </a>
             </li>
+            <li>
+              <a onClick={this.guvenlicikis}>
+                <p className="sb-font-size">Güvenli Çıkış</p>
+              </a>
+            </li>
+            <li>
+              <a onClick={this.guvenlicikis}>
+                <p className="sb-font-size">Güvenli Çıkış</p>
+              </a>
+            </li>
+            <li>
+              <a onClick={this.guvenlicikis}>
+                <p className="sb-font-size">Güvenli Çıkış</p>
+              </a>
+            </li>
+            <li>
+              <a onClick={this.guvenlicikis}>
+                <p className="sb-font-size">Güvenli Çıkış</p>
+              </a>
+            </li>
+            <li>
+              <a onClick={this.guvenlicikis}>
+                <p className="sb-font-size">Güvenli Çıkış</p>
+              </a>
+            </li>
           </NavBar>
         </div>
         <div>
