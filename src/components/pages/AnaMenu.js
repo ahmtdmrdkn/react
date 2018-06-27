@@ -48,6 +48,7 @@ class KarsilamaEkrani extends Component {
           </Col>
           <Col>
             <AnaMenuItem
+              navigate="/liradergisi"
               label="Lira Dergisi"
               iconpath="/assets/img/icons/pack1/lira_dergisi_renkli.png"
             />

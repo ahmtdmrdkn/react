@@ -8,9 +8,11 @@ import {
   Form,
   FormGroup,
   Label,
-  Input
+  Input,
+  Button
 } from "reactstrap";
 import DuyuruEklentileri from "../shared/DuyuruEklentileri";
+import Tarihce from "../shared/Tarihce";
 
 class YeniDuyuru extends Component {
   constructor() {
@@ -34,14 +36,33 @@ class YeniDuyuru extends Component {
                 <Form>
                   <FormGroup>
                     <Label for="konu">Konu:</Label>
-                    <Input type="text" name="konu" id="konu" autoComplete="off" />
+                    <Input
+                      type="text"
+                      name="konu"
+                      id="konu"
+                      autoComplete="off"
+                    />
                   </FormGroup>
                   <FormGroup>
                     <Label for="icerik">İçerik:</Label>
                     <Input type="textarea" name="text" id="icerik" />
                   </FormGroup>
-                  <DuyuruEklentileri selectedFiles={this.handleFile}/>
+                  <DuyuruEklentileri selectedFiles={this.handleFile} />
                 </Form>
+                <Button outline block color="warning">
+                  <i className="fa fa-paper-plane" />&nbsp;Taslak Olarak Kaydet
+                </Button>
+                <Button outline block color="success">
+                  <i className="fa fa-paper-plane" />&nbsp;Onaya Gönder
+                </Button>
+              </CardBody>
+            </Card>
+          </Col>
+          <Col>
+            <Card>
+              <CardBody>
+                <CardTitle>Tarihçe</CardTitle>
+                <Tarihce />
               </CardBody>
             </Card>
           </Col>

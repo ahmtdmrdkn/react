@@ -59,7 +59,7 @@ class TelefonRehberi extends Component {
     const { rehber } = { ...this.state };
     return (
       <Row>
-        <Col>
+        <Col lg="6">
           <Card>
             <CardBody>
               <CardTitle>Telefon Rehberi</CardTitle>

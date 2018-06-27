@@ -7,6 +7,7 @@ class PageWrapper extends Component {
   }
 
   toggleSideBar() {
+    document.getElementsByTagName("html")[0].classList.add('lock');
     setTimeout(function() {
       document.getElementById("navbartoggler").classList.add("toggled");
     }, 580);
@@ -14,6 +15,7 @@ class PageWrapper extends Component {
     div.setAttribute("id", "bodyClick");
     div.onclick = function() {
       document.getElementsByTagName("html")[0].classList.remove("nav-open");
+      document.getElementsByTagName("html")[0].classList.remove('lock');
       setTimeout(() => {
         document.getElementById("navbartoggler").classList.remove("toggled");
         document.getElementById("bodyClick").remove();

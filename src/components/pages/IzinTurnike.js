@@ -25,7 +25,7 @@ class IzinTurnike extends Component {
     }
     return (
       <Row>
-        <Col>
+        <Col lg={6}>
           <Card>
             <CardBody>
               <CardTitle>İzin / Turnike Verileri</CardTitle>

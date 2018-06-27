@@ -33,3 +33,10 @@
   transition: 1s -webkit-filter linear;
   transition: 1s filter linear;
 }
+
+.lock {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  position: fixed;
+}

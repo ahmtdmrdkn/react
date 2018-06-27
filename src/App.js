@@ -19,6 +19,7 @@ import Gonderilenler from "./components/pages/Gonderilenler";
 import TelefonRehberi from "./components/pages/TelefonRehberi";
 import IzinTurnike from "./components/pages/IzinTurnike";
 import OnayBekleyenler from "./components/pages/OnayBekleyenler";
+import LiraDergisi from "./components/pages/LiraDergisi";
 
 class App extends Component {
   constructor() {
@@ -40,32 +41,31 @@ class App extends Component {
   }
   render() {
     return (
-      <React.Fragment>
-        <Router>
-          <Wrapper>
-            <Sidebar />
-            <PageWrapper>
-              <Switch>
-                <Route
-                  path="/yeniduyuru"
-                  render={() =>
-                    this.checkRouteSafety(1) ? <YeniDuyuru /> : <YetkinizYok />
-                  }
-                />
-                <Route path="/anamenu" component={AnaMenu} />
-                <Route path="/taslaklar" component={Taslaklar} />
-                <Route path="/gylistesi" component={GorevliYoneticiListesi} />
-                <Route path="/ylistesi" component={YemekListesi} />
-                <Route path="/gonderilenler" component={Gonderilenler} />
-                <Route path="/telefonrehberi" component={TelefonRehberi} />
-                <Route path="/izinturnike" component={IzinTurnike} />
-                <Route path="/obekleyenler" component={OnayBekleyenler} />
-                <Redirect to="/anamenu" />
-              </Switch>
-            </PageWrapper>
-          </Wrapper>
-        </Router>
-      </React.Fragment>
+      <Router>
+        <Wrapper>
+          <Sidebar />
+          <PageWrapper>
+            <Switch>
+              <Route
+                path="/yeniduyuru"
+                render={() =>
+                  this.checkRouteSafety(1) ? <YeniDuyuru /> : <YetkinizYok />
+                }
+              />
+              <Route path="/anamenu" component={AnaMenu} />
+              <Route path="/taslaklar" component={Taslaklar} />
+              <Route path="/gylistesi" component={GorevliYoneticiListesi} />
+              <Route path="/ylistesi" component={YemekListesi} />
+              <Route path="/gonderilenler" component={Gonderilenler} />
+              <Route path="/telefonrehberi" component={TelefonRehberi} />
+              <Route path="/izinturnike" component={IzinTurnike} />
+              <Route path="/obekleyenler" component={OnayBekleyenler} />
+              <Route path="/liradergisi" component={LiraDergisi} />
+              <Redirect to="/anamenu" />
+            </Switch>
+          </PageWrapper>
+        </Wrapper>
+      </Router>
     );
   }
 }
