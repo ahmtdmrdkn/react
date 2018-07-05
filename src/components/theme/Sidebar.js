@@ -40,10 +40,7 @@ class Sidebar extends Component {
       <React.Fragment>
         <div className="sidebar" data-color="white" data-active-color="info">
           <div className="logo" style={{ textAlign: "center" }}>
-            <a
-              href="http://www.creative-tim.com"
-              className="simple-text logo-normal"
-            >
+            <a className="simple-text logo-normal">
               <img
                 height="28px"
                 src="http://www.tcmb.gov.tr/wps/wcm/connect/262f6943-1f47-44b8-9471-a488940f31d4/Logo.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE-262f6943-1f47-44b8-9471-a488940f31d4-m2sNI2C"
@@ -52,9 +49,42 @@ class Sidebar extends Component {
             </a>
           </div>
           <NavBar>
+            <li>
+              <a
+                data-toggle="collapse"
+                href="#componentsExamples"
+                className="collapsed"
+                aria-expanded="false"
+              >
+              <i className="ti-panel"></i>
+                <p className="sb-font-size">
+                  Drop Down<b className="caret" />
+                </p>
+              </a>
+              <div
+                className="collapse"
+                id="componentsExamples"
+                aria-expanded="false"
+                style={{ height: "0px" }}
+              >
+                <ul className="nav">
+                  <li>
+                    <a>
+                      <span className="sidebar-mini">B</span>
+                      <span className="sidebar-normal">Buttons</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
             <NavLink
               to="/anamenu"
               label="Ana Menü"
+              onClick={this.closeSideBarIfNecessary}
+            />
+            <NavLink
+              to="/epostalistesi"
+              label="E-Posta Listesi"
               onClick={this.closeSideBarIfNecessary}
             />
             <NavLink

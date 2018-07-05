@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 class NavLink extends Component {
   render() {
     var isActive =
-      this.context.router.route.location.pathname === this.props.to;
+      this.context.router.route.location.pathname.indexOf(this.props.to) >= 0;
     var className = isActive ? "active" : "";
     return (
       <li className={className}>

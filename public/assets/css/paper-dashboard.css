@@ -2297,7 +2297,8 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  /* font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif; */
+  font-family: "Roboto";
   /* font-family: "Oswald"; */
 }
 
@@ -2496,7 +2497,8 @@ a.text-gray:hover {
 body {
   color: #2c2c2c;
   font-size: 14px;
-  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  /* font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif; */
+  font-family: "Roboto";
   /* font-family: "Oswald", sans-serif; */
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -3046,7 +3048,8 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 }
 
 .navbar.navbar-transparent {
-  background-color: transparent !important;
+  /* background-color: transparent !important; */
+  background-color: white;
   box-shadow: none;
   border-bottom: 1px solid #ddd;
 }

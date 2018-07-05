@@ -40,3 +40,21 @@
   width: 100%;
   position: fixed;
 }
+
+
+.wizard-router {
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  color:#17a2b8;
+}
+
+.wizard-active {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.wizard-deactive {
+  background-color: #ffffff;
+  color: #6dd2e4;
+}

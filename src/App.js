@@ -1,11 +1,6 @@
 import "./App.css";
 import React, { Component } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import Wrapper from "./components/theme/Wrapper";
 import Sidebar from "./components/theme/Sidebar";
 import PageWrapper from "./components/theme/PageWrapper";
@@ -20,6 +15,7 @@ import TelefonRehberi from "./components/pages/TelefonRehberi";
 import IzinTurnike from "./components/pages/IzinTurnike";
 import OnayBekleyenler from "./components/pages/OnayBekleyenler";
 import LiraDergisi from "./components/pages/LiraDergisi";
+import EpostaListesi from "./components/pages/EpostaListesi";
 
 class App extends Component {
   constructor() {
@@ -46,13 +42,14 @@ class App extends Component {
           <Sidebar />
           <PageWrapper>
             <Switch>
+              <Route path="/anamenu" component={AnaMenu} />
               <Route
                 path="/yeniduyuru"
                 render={() =>
                   this.checkRouteSafety(1) ? <YeniDuyuru /> : <YetkinizYok />
                 }
               />
-              <Route path="/anamenu" component={AnaMenu} />
+              <Route path="/epostalistesi" component={EpostaListesi} />
               <Route path="/taslaklar" component={Taslaklar} />
               <Route path="/gylistesi" component={GorevliYoneticiListesi} />
               <Route path="/ylistesi" component={YemekListesi} />
